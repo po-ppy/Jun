@@ -28,17 +28,23 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     normalform.cpp \
-    chartform.cpp
+    chartform.cpp \
+    denosingform.cpp \
+    settingform.cpp
 
 HEADERS += \
         mainwindow.h \
     normalform.h \
-    chartform.h
+    chartform.h \
+    denosingform.h \
+    settingform.h
 
 FORMS += \
         mainwindow.ui \
     normalform.ui \
-    chartform.ui
+    chartform.ui \
+    denosingform.ui \
+    settingform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

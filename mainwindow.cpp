@@ -8,8 +8,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     initStatusBar();
     initAllForms();
+
     QObject::connect(normalForm,SIGNAL(closeSideBar()),this,SLOT(hideSideBar()));
+    QObject::connect(denosingForm,SIGNAL(closeSideBar()),this,SLOT(hideSideBar()));
+    QObject::connect(settingForm,SIGNAL(closeSideBar()),this,SLOT(hideSideBar()));
     connect(ui->actionNormal,SIGNAL(triggered(bool)),this,SLOT(toggleNormalForm()));
+    connect(ui->actionDenoising,SIGNAL(triggered(bool)),this,SLOT(toggleDenosingForm()));
+    connect(ui->actionSetting,SIGNAL(triggered(bool)),this,SLOT(toggleSettingForm()));
+
     connect(ui->actionopen,SIGNAL(triggered(bool)),chartForm,SLOT(showImg()));
     connect(ui->actionsave,SIGNAL(triggered(bool)),chartForm,SLOT(saveFile()));
 }
@@ -22,11 +28,16 @@ MainWindow::~MainWindow()
 void MainWindow::initAllForms(){
     normalForm = new NormalForm(this);
     chartForm = new ChartForm(this);
+    denosingForm = new DenosingForm(this);
+    settingForm = new SettingForm(this);
 
     ui->rightStackedWidget->addWidget(normalForm);
+    ui->rightStackedWidget->addWidget(denosingForm);
+    ui->rightStackedWidget->addWidget(settingForm);
     ui->leftStackedWidget->addWidget(chartForm);
     ui->leftStackedWidget->setCurrentWidget(chartForm);
     ui->rightStackedWidget->setCurrentWidget(normalForm);
+//    ui->rightStackedWidget->hide();
 }
 
 void MainWindow::initStatusBar(){
@@ -100,9 +111,41 @@ void MainWindow::hideSideBar(){
 void MainWindow::toggleNormalForm(){
 
     if(ui->rightStackedWidget->isVisible()){
-        ui->rightStackedWidget->hide();
+        if(ui->rightStackedWidget->currentWidget() == normalForm){
+            ui->rightStackedWidget->hide();
+        }else{
+            ui->rightStackedWidget->setCurrentWidget(normalForm);
+        }
     }else{
         ui->rightStackedWidget->setCurrentWidget(normalForm);
+        ui->rightStackedWidget->show();
+    }
+}
+
+void MainWindow::toggleSettingForm(){
+
+    if(ui->rightStackedWidget->isVisible()){
+        if(ui->rightStackedWidget->currentWidget() == settingForm){
+            ui->rightStackedWidget->hide();
+        }else{
+            ui->rightStackedWidget->setCurrentWidget(settingForm);
+        }
+    }else{
+        ui->rightStackedWidget->setCurrentWidget(settingForm);
+        ui->rightStackedWidget->show();
+    }
+}
+
+void MainWindow::toggleDenosingForm(){
+
+    if(ui->rightStackedWidget->isVisible()){
+        if(ui->rightStackedWidget->currentWidget() == denosingForm){
+            ui->rightStackedWidget->hide();
+        }else{
+            ui->rightStackedWidget->setCurrentWidget(denosingForm);
+        }
+    }else{
+        ui->rightStackedWidget->setCurrentWidget(denosingForm);
         ui->rightStackedWidget->show();
     }
 }

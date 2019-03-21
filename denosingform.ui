@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>NormalForm</class>
- <widget class="QWidget" name="NormalForm">
+ <class>DenosingForm</class>
+ <widget class="QWidget" name="DenosingForm">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>428</width>
-    <height>739</height>
+    <width>408</width>
+    <height>612</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,7 +101,7 @@
             </font>
            </property>
            <property name="title">
-            <string>Normal</string>
+            <string>Denosing</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>

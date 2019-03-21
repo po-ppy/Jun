@@ -38,9 +38,6 @@ void ChartForm::showImg(){
 void ChartForm::saveFile(){
     QString fileName = QFileDialog::getSaveFileName(this,"保存文件");
     if(!fileName.isNull() && !fileName.isEmpty()){
-        //保存文件具体操作加在这
-
-        //保存成功提示
         QMessageBox::information(this,"提示","文件已保存。");
     }
 }

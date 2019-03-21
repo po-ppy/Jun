@@ -7,6 +7,8 @@
 #include <QHBoxLayout>
 #include <normalform.h>
 #include <chartform.h>
+#include <denosingform.h>
+#include <settingform.h>
 
 
 namespace Ui {
@@ -24,10 +26,14 @@ private slots:
     //void toggleSideBar();//无用
     void hideSideBar();
     void toggleNormalForm();
+    void toggleDenosingForm();
+    void toggleSettingForm();
 private:
     Ui::MainWindow *ui;
     NormalForm *normalForm;
     ChartForm *chartForm;
+    DenosingForm *denosingForm;
+    SettingForm *settingForm;
 
     QLabel *downLabel;
     QLabel *downNumLabel;

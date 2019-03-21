@@ -26,7 +26,7 @@
      <widget class="QStackedWidget" name="rightStackedWidget">
       <property name="maximumSize">
        <size>
-        <width>300</width>
+        <width>400</width>
         <height>16777215</height>
        </size>
       </property>
@@ -84,11 +84,11 @@
    <addaction name="actionSave_Ply"/>
    <addaction name="actionSave_Skel"/>
    <addaction name="actionSnapShot"/>
-   <addaction name="actionClear"/>
+   <addaction name="actionDenoising"/>
    <addaction name="actionDown_Sample"/>
    <addaction name="actionSkeleton"/>
    <addaction name="actionEAR"/>
-   <addaction name="actionWLOP"/>
+   <addaction name="actionSetting"/>
    <addaction name="actionNormal"/>
    <addaction name="separator"/>
   </widget>
@@ -192,13 +192,13 @@
     <string>SnapShot</string>
    </property>
   </action>
-  <action name="actionClear">
+  <action name="actionDenoising">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/图标/清除.png</normaloff>:/图标/清除.png</iconset>
    </property>
    <property name="text">
-    <string>Clear</string>
+    <string>Denoising</string>
    </property>
   </action>
   <action name="actionDown_Sample">
@@ -224,13 +224,13 @@
     <string>EAR</string>
    </property>
   </action>
-  <action name="actionWLOP">
+  <action name="actionSetting">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/图标/应用中心.png</normaloff>:/图标/应用中心.png</iconset>
    </property>
    <property name="text">
-    <string>WLOP</string>
+    <string>Setting</string>
    </property>
   </action>
   <action name="actionNormal">
