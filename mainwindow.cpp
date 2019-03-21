@@ -15,9 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionNormal,SIGNAL(triggered(bool)),this,SLOT(toggleNormalForm()));
     connect(ui->actionDenoising,SIGNAL(triggered(bool)),this,SLOT(toggleDenosingForm()));
     connect(ui->actionSetting,SIGNAL(triggered(bool)),this,SLOT(toggleSettingForm()));
+    connect(ui->actionRegistration,SIGNAL(triggered(bool)),this,SLOT(showProgressDialog()));
 
-    connect(ui->actionopen,SIGNAL(triggered(bool)),chartForm,SLOT(showImg()));
-    connect(ui->actionsave,SIGNAL(triggered(bool)),chartForm,SLOT(saveFile()));
+    connect(ui->actionOpen,SIGNAL(triggered(bool)),chartForm,SLOT(showImg()));
+    connect(ui->actionSave,SIGNAL(triggered(bool)),chartForm,SLOT(saveFile()));
 }
 
 MainWindow::~MainWindow()
@@ -106,6 +107,24 @@ void MainWindow::initStatusBar(){
 
 void MainWindow::hideSideBar(){
     ui->rightStackedWidget->hide();
+}
+
+void MainWindow::showProgressDialog(){
+    QProgressDialog progressDialog(tr("进度"),tr("取消"),0,5000,this);
+    progressDialog.setWindowTitle(tr("进度对话框"));
+        progressDialog.setWindowModality(Qt::WindowModal);
+        progressDialog.show();
+        for(int i = 0; i < 5000; i++)//已知最大值不超过50000
+        {
+            QThread::msleep(1);
+            progressDialog.setValue(i);
+            QCoreApplication::processEvents();
+            if(progressDialog.wasCanceled())
+                break;
+        }
+        progressDialog.setValue(5000);
+        progressDialog.close();
+        QMessageBox::information(this,"进度","已完成！");
 }
 
 void MainWindow::toggleNormalForm(){

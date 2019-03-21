@@ -9,6 +9,8 @@
 #include <chartform.h>
 #include <denosingform.h>
 #include <settingform.h>
+#include <QProgressDialog>
+#include <QThread>
 
 
 namespace Ui {
@@ -28,6 +30,7 @@ private slots:
     void toggleNormalForm();
     void toggleDenosingForm();
     void toggleSettingForm();
+    void showProgressDialog();
 private:
     Ui::MainWindow *ui;
     NormalForm *normalForm;
