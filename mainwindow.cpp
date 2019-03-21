@@ -10,9 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     initAllForms();
     QObject::connect(normalForm,SIGNAL(closeSideBar()),this,SLOT(hideSideBar()));
     connect(ui->actionNormal,SIGNAL(triggered(bool)),this,SLOT(toggleNormalForm()));
-
-
-
+    connect(ui->actionopen,SIGNAL(triggered(bool)),chartForm,SLOT(showImg()));
+    connect(ui->actionsave,SIGNAL(triggered(bool)),chartForm,SLOT(saveFile()));
 }
 
 MainWindow::~MainWindow()

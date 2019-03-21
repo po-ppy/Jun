@@ -2,8 +2,13 @@
 #define CHARTFORM_H
 
 #include <QWidget>
-#include <QtDataVisualization/Q3DScatter>
-using namespace QtDataVisualization;
+#include <QLabel>
+#include <QFile>
+#include <QFileDialog>
+#include <QImage>
+#include <QMessageBox>
+//#include <QtDataVisualization/Q3DScatter>
+//using namespace QtDataVisualization;
 namespace Ui {
 class ChartForm;
 }
@@ -18,6 +23,11 @@ public:
 
 private:
     Ui::ChartForm *ui;
+    QLabel *imgLabel;
+
+public slots:
+    void showImg();
+    void saveFile();
 };
 
 #endif // CHARTFORM_H

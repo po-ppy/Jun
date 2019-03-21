@@ -17,7 +17,7 @@
    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,3">
     <item>
      <widget class="QStackedWidget" name="leftStackedWidget">
-      <widget class="QWidget" name="leftStackedWidgetPage1" native="true">
+      <widget class="QWidget" name="leftStackedWidgetPage1">
        <layout class="QHBoxLayout" name="horizontalLayout"/>
       </widget>
      </widget>
@@ -30,7 +30,7 @@
         <height>16777215</height>
        </size>
       </property>
-      <widget class="QWidget" name="horizontalStackedWidgetPage1_2" native="true">
+      <widget class="QWidget" name="horizontalStackedWidgetPage1_2">
        <layout class="QHBoxLayout" name="horizontalLayout_2"/>
       </widget>
      </widget>
@@ -50,6 +50,8 @@
     <property name="title">
      <string>File(&amp;F)</string>
     </property>
+    <addaction name="actionopen"/>
+    <addaction name="actionsave"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -76,7 +78,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionImport_Ply"/>
    <addaction name="actionSave_Ply"/>
@@ -238,6 +240,16 @@
    </property>
    <property name="text">
     <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionopen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>save</string>
    </property>
   </action>
  </widget>
