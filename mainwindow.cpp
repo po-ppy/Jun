@@ -110,8 +110,8 @@ void MainWindow::hideSideBar(){
 }
 
 void MainWindow::showProgressDialog(){
-    QProgressDialog progressDialog(tr("进度"),tr("取消"),0,5000,this);
-    progressDialog.setWindowTitle(tr("进度对话框"));
+    QProgressDialog progressDialog(tr("配准中"),tr("取消"),0,5000,this);
+    progressDialog.setWindowTitle(tr("配准"));
         progressDialog.setWindowModality(Qt::WindowModal);
         progressDialog.show();
         for(int i = 0; i < 5000; i++)//已知最大值不超过50000
@@ -124,7 +124,7 @@ void MainWindow::showProgressDialog(){
         }
         progressDialog.setValue(5000);
         progressDialog.close();
-        QMessageBox::information(this,"进度","已完成！");
+        QMessageBox::information(this,"配准","已完成！");
 }
 
 void MainWindow::toggleNormalForm(){
