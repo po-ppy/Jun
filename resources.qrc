@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>import.png</file>
+        <file>leftArrow.png</file>
+        <file>rightArrow.png</file>
+        <file>close.png</file>
+        <file>图标/云存储.png</file>
+        <file>图标/应用中心.png</file>
+        <file>图标/相机转换.png</file>
+        <file>图标/文件.png</file>
+        <file>图标/清除.png</file>
+        <file>图标/箭头.png</file>
+        <file>图标/工作台.png</file>
+        <file>图标/风景.png</file>
+        <file>图标/点赞.png</file>
+    </qresource>
+</RCC>
